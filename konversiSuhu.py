@@ -58,6 +58,11 @@ def kelvin_to_fahrenheit(kelvin):
     return fahrenheit
 
 
+# celcius = float(input("masukan angka celcius: "))
+# hasilKonversi = celcius_to_reaamur(celcius)
+# print(f"Hasil dari konversi Celcius ke Reamur adalah %0.2f" % hasilKonversi )
+
+
 # Program Utama
 while True :
     print("\n")
@@ -76,8 +81,8 @@ while True :
             valid_celcius = False
             while not valid_celcius:
                 celcius = input("Masukan Nilai Celcius: ")
-                if celcius.isdigit:
-                    celcius = int(celcius)
+                if celcius.isdigit():
+                    celcius = float(celcius)
                     valid_celcius = True
                     print("===========================================")
                     print("||        Perhitungan Celcius            ||")
@@ -85,8 +90,14 @@ while True :
                     print("||   1. Perhitungan Celcius ke Reamur    ||")
                     print("||   2. Perhitungan Celcius ke Farenheit ||")
                     print("||   3. Perhitungan Celcius ke Kelvin    ||")
+                    print("||   4. Kembali                          ||")
                     print("===========================================")
-                    
+                    choise = input("Masukan Perhitungan yang diinginkan: ")
+                    if choise.isdigit():
+                        choise = int(choise)
+                        if choise == 1:
+                            convert_celcius_to_reamur = celcius_to_reaamur(celcius)
+                            print("Hasil dari konversi Suhu Celcius ke Reamur adalah", convert_celcius_to_reamur ,"R")
                 elif celcius.strip() == "":
                     print("angka celcius tidak boleh kosong")
                 else :
